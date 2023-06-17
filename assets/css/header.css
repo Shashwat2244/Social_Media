@@ -1,0 +1,20 @@
+header {
+  width: 100%;
+  background-color: #1a4b94;
+  color: white;
+  height: 50px; }
+  header ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    font-size: 40px; }
+    header ul #layout-header {
+      margin-left: 70%;
+      font-size: 30px;
+      display: flex;
+      flex-direction: row; }
+      header ul #layout-header li {
+        margin-left: 40px; }
+    header ul a {
+      color: white;
+      text-decoration: none; }

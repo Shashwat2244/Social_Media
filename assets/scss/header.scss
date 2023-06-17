@@ -1,0 +1,25 @@
+header{
+    width: 100%;
+    background-color: rgb(26, 75, 148);
+    color: white;
+    height: 50px;
+    ul{
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        font-size: 40px;
+        #layout-header{
+            margin-left: 70%;
+            font-size: 30px;
+            display: flex;
+            flex-direction: row;
+            li{
+                margin-left: 40px;
+            }
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+    }  
+}

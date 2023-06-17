@@ -1,0 +1,17 @@
+footer {
+  height: 40px;
+  display: flex;
+  background-color: #4e4132;
+  color: white;
+  font-size: 25px; }
+  footer #copyright {
+    padding: 4px;
+    width: 50%; }
+  footer #links {
+    padding: 5px; }
+    footer #links a {
+      font-size: 20px;
+      text-decoration: none;
+      color: white; }
+      footer #links a:hover {
+        color: #3a8bd6; }

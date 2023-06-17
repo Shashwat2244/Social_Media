@@ -1,6 +1,8 @@
+// require('dotenv').config();
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/socialmedia_development');
+ mongoose.connect('mongodb://localhost/socialmedia_development');
+// mongoose.connect(process.env.DB_CONNECTION);
 
 const db = mongoose.connection;
 
