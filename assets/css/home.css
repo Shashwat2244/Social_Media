@@ -1,2 +1,21 @@
-body {
-  background-color: palevioletred; }
+#home-container {
+  display: flex;
+  height: 100%; }
+  #home-container #feed-posts {
+    width: 70%;
+    padding: 10px; }
+  #home-container #user-friends {
+    width: 30%;
+    padding: 10px;
+    border-left: 1px solid #0618b8;
+    height: 100%; }
+    #home-container #user-friends h4 {
+      font-size: 40px; }
+    #home-container #user-friends p {
+      background-color: #b6b6b6;
+      font-size: 25px; }
+    #home-container #user-friends p:hover {
+      background-color: #7a7a7a; }
+    #home-container #user-friends a {
+      text-decoration: none;
+      color: black; }

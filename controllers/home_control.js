@@ -1,5 +1,5 @@
 const Post = require('../models/post');
-
+const User = require('../models/user');
 module.exports.home = function(req,res){
    // return res.end('<h1> Express is up for Social Arcade! </h1>');
    // Post.find({}).then(posts => {
@@ -22,11 +22,25 @@ module.exports.home = function(req,res){
    })
    .exec()
    .then(posts => {
-      console.log(posts);
-      return res.render('home', {
-         title: "SocioArcade | Home",
-         posts: posts
+      // User.find({}, function(err, users){
+      // return res.render('home', {
+      //    title: "SocioArcade | Home",
+      //    posts: posts,
+      //    all_users: users
+      // });
+      // })
+      
+      User.find({}).then(users => {
+         return res.render('home', {
+            title: "SocioArcade | Home",
+            posts: posts,
+            all_users: users
+         });
+      }).catch(err => {
+         console.log(err);
+         throw err;
       });
+
    }).catch(err => {
       console.log(err);
    });

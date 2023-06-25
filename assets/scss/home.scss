@@ -1,3 +1,28 @@
-body{
-    background-color: palevioletred;
+#home-container{
+    display: flex;
+    height: 100%;
+    #feed-posts{
+        width: 70%;
+        padding: 10px;
+    }
+    #user-friends{
+        width: 30%;
+        padding: 10px;
+        border-left: 1px solid rgb(6, 24, 184);
+        height: 100%;
+        h4{
+            font-size: 40px;
+        }
+        p{
+            background-color: rgb(182, 182, 182);
+            font-size: 25px;
+        }
+        p:hover{
+            background-color: rgb(122, 122, 122);
+        }
+        a{
+            text-decoration: none;
+            color:black;
+        }
+    }
 }
