@@ -61,29 +61,50 @@ module.exports.signin = function(req,res){
 }
 
 //Get the Sign Up Data
-module.exports.create = function(req, res){
-    if(req.body.password != req.body.confirm_password){
-        return res.redirect('back');
+// module.exports.create = function(req, res){
+//     if(req.body.password != req.body.confirm_password){
+//         return res.redirect('back');
+//     }
+    
+// User.findOne({ email: req.body.email })
+//   .then((user) => {
+//     if (!user) {
+//       return User.create(req.body);
+//     } else {
+//       throw new Error('User already exists');
+//     }
+//   })
+//   .then((user) => {
+//     return res.redirect('/users/sign-in');
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//     return res.redirect('back');
+//   });
+
+
+module.exports.create =async function(req,res){
+    try {
+        // console.log('in try block')
+        if(req.body.password != req.body.confirm_password){
+            return res.redirect('back');
+        }
+        let user =await User.findOne({email: req.body.email});
+        if(!user){
+            await User.create(req.body);
+            return res.redirect('/users/sign-in');
+        }else{
+            return res.redirect('back');
+        }
+        
+    } catch (error) {
+        console.log('error in sih=gn up', error);
+        return;
     }
     
-User.findOne({ email: req.body.email })
-  .then((user) => {
-    if (!user) {
-      return User.create(req.body);
-    } else {
-      throw new Error('User already exists');
-    }
-  })
-  .then((user) => {
-    return res.redirect('/users/sign-in');
-  })
-  .catch((error) => {
-    console.log(error);
-    return res.redirect('back');
-  });
-
-
 }
+
+// }
 
 // Sign in and Create a session for the user
 module.exports.createSession = function(req, res){

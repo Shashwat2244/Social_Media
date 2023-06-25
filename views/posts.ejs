@@ -1,3 +1,12 @@
 <link rel="stylesheet" href="/css/posts_content.css">
 <h1>Posts / <%= title %></h1>
+
+<% posts.forEach(function(post) { %>
+<div>
+    <p><%= post.content %></p>
+    <% post.comments.forEach(function(comment) { %>
+        <p><%= comment.content %></p>
+    <% }); %>
+</div>    
+<% }); %>
        
